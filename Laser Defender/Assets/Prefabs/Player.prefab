@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5986949946851803292}
   - component: {fileID: 1178064573673779304}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: playerShip1_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,10 +70,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 705b37a282ac78e4d81a8cc111111b4b, type: 3}
+  m_SortingLayerID: 177558101
+  m_SortingLayer: 2
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 7ec7f51b0e5b41842a9f18d7b0789594, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,11 +93,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6200825820217588955}
-  - component: {fileID: 611633326}
   - component: {fileID: 611633327}
   - component: {fileID: 2014932198193841563}
   - component: {fileID: -7968250247915506492}
-  m_Layer: 0
+  - component: {fileID: 611633326}
+  - component: {fileID: 9124166049061488046}
+  - component: {fileID: 4955917387168273198}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,23 +122,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &611633326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6237486060167747397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c642cefbe3803d4dacdda65b545d79c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 8
-  paddingLeft: 0.5
-  paddingRight: 0.5
-  paddingLTop: 10
-  paddingBottom: 2
 --- !u!114 &611633327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +189,54 @@ CircleCollider2D:
   m_Offset: {x: -0.0062893927, y: -0.024243802}
   serializedVersion: 2
   m_Radius: 0.34421965
+--- !u!114 &611633326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237486060167747397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c642cefbe3803d4dacdda65b545d79c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 8
+  paddingLeft: 0.5
+  paddingRight: 0.5
+  paddingLTop: 10
+  paddingBottom: 2
+--- !u!114 &9124166049061488046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237486060167747397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c426d1b3cbd6b540a8d76d59bd399a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  hitEffect: {fileID: 7347271088902999761, guid: 09bac4061b89ca24b977f2a52197478e, type: 3}
+--- !u!114 &4955917387168273198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6237486060167747397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2873d93bb0b764887f1888d7bf710f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 1411973233878139570, guid: 83d590af688baeb41abd69dc6c9e40e4, type: 3}
+  projectileSpeed: 10
+  projectileLifetime: 5
+  baseFiringRate: 0.2
+  useAI: 0
+  firingRateVariance: 0
+  minimumFiringRate: 0.1
+  isFiring: 0
