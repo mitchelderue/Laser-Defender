@@ -11,8 +11,8 @@ public class Pathfinder : MonoBehaviour
 
     void Awake()
     {
-            // Get current wave
-            enemySpawner = FindObjectOfType<EnemySpawner>();
+        // Get current wave
+        enemySpawner = FindObjectOfType<EnemySpawner>();
     }
 
     void Start()
