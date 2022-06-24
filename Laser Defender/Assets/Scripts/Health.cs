@@ -15,19 +15,21 @@ public class Health : MonoBehaviour
 
     AudioPlayer audioPlyaer;
     ScoreKeeper scoreKeeper;
+    LevelManager levelManager;
 
     void Awake()
     {
         audioPlyaer = FindObjectOfType<AudioPlayer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         cameraShake = Camera.main.GetComponent<CameraShake>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
 
-        if(damageDealer != null)
+        if (damageDealer != null)
         {
             TakeDamage(damageDealer.GetDamage());
             PlayHitEffect();
@@ -49,35 +51,39 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             Die();
-            
+
         }
     }
 
     void Die()
     {
-        if(!isPlayer)
+        if (!isPlayer)
         {
             scoreKeeper.ModifyScore(score);
+        }
+        else
+        {
+            levelManager.LoadGameOver();
         }
         Destroy(gameObject);
     }
 
     void PlayHitEffect()
     {
-        if(hitEffect != null)
+        if (hitEffect != null)
         {
             ParticleSystem instance = Instantiate(hitEffect, transform.position, Quaternion.identity);
             Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
         }
     }
-    
+
     void ShakeCamera()
     {
-        if(cameraShake != null && applyCameraShake)
+        if (cameraShake != null && applyCameraShake)
         {
             cameraShake.Play();
         }
     }
 
-    
+
 }
